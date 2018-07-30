@@ -21,12 +21,16 @@
   &.scroll-vertical {
     .datatable-body {
       overflow-y:auto;
-      .datatable-row-wrapper {
-        position: absolute;
+    }
+    &.virtualized {
+      .datatable-body {
+       .datatable-row-wrapper {
+          position: absolute;
+        }
       }
-
     }
   }
+
 
   /**
    * Horizontal Scrolling Adjustments
@@ -37,6 +41,7 @@
       -webkit-overflow-scrolling: touch;
     }
   }
+
 
   /**
    * Fixed Header Height Adjustments
@@ -180,6 +185,20 @@
       &:hover {
         .resize-handle--not-resizable {
           visibility: visible;
+        }
+      }
+
+      .targetMarker {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        &.dragFromLeft {
+          right: 0;
+        }
+
+        &.dragFromRight {
+          left: 0;
         }
       }
 
